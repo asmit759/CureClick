@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-container">
+        <h1>Login</h1>
+        <input type="text" id="login-username" placeholder="Username">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()" id="button1">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+    </div>
+
+    <div id="register-container" style="display:none;">
+        <h1>Register</h1>
+        <input type="text" id="register-username" placeholder="Username">
+        <input type="password" id="register-password" placeholder="Password">
+        <button onclick="register()">Register</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+
+    <div id="booking-container" style="display:none;">
+        <h1>Doctor Appointment Booking</h1>
+        <button onclick="logout()">Logout</button>
+
+        <label>Select Doctor:</label>
+        <select id="doctorList" onchange="loadAvailableSlots()"></select>
+
+        <h3>Available Slots:</h3>
+        <select id="slotList"></select>
+
+        <button onclick="bookAppointment()">Book Appointment</button>
+
+        <h2>Your Appointments</h2>
+        <ul id="appointmentsList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
